@@ -102,7 +102,7 @@ set history=500
 set hlsearch          " highlight matches
 set incsearch
 set lazyredraw
-set list listchars=tab:»·,trail:·
+set list listchars=tab:\–\—,trail:·
 set modelines=0
 set noswapfile
 set number
@@ -113,6 +113,7 @@ set shell=/bin/bash
 set showmode
 set splitbelow
 set splitright
+set tabstop=2
 set textwidth=78
 set ttimeout
 set ttimeoutlen=20
@@ -120,15 +121,6 @@ set ttyfast
 set visualbell
 set wildmenu
 set wildmode=list:longest,full
-
-"***********************
-"Softtabs, 2 spaces
-"***********************
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-
 
 "***********************
 "Search settings
