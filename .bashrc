@@ -68,6 +68,7 @@ alias mv='mv -i'
 alias o='xdg-open'
 alias r='reset'
 alias rsp='ruby ~/development/code/scratchpads/ruby_scratchpad.rb'
+alias sag='sudo apt-get'
 alias jsp='node ~/development/code/scratchpads/js-scratchpad.js'
 
 # wc = word count; -l = lines only; * = all files; | pipe into sort; sort -n = sort numerically
