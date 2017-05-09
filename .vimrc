@@ -77,6 +77,8 @@ map <Leader>[   :vertical resize +5<CR>
 map <Leader>bk  :e ~/development/study_materials/readings/bookmark.txt<CR>
 map <Leader>brc :e ~/.bashrc<CR>
 map <Leader>h   :noh<CR>
+map <Leader>l   :set list<CR>
+map <Leader>nl  :set nolist<CR>
 map <Leader>q   :bp<bar>sp<bar>bn<bar>bd<CR>
 map <Leader>rc  :e ~/.vimrc<CR>
 map <Leader>rsp :e ~/development/code/scratchpads/ruby_scratchpad.rb<CR>
@@ -110,6 +112,7 @@ set numberwidth=5
 set relativenumber
 set ruler             " show the cursor position all the time
 set shell=/bin/bash
+set shiftwidth=2
 set showmode
 set splitbelow
 set splitright
@@ -133,7 +136,6 @@ set ignorecase
 "***********************
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark " or light
-colorscheme solarized
 syntax enable
 
 "***********************
@@ -154,7 +156,7 @@ set laststatus=2        " Always display the status line
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline
 set cursorline
-
+hi CursorLine term=bold cterm=bold guibg=Grey40
 
 "***********************
 "set internal variables
