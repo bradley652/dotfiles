@@ -59,6 +59,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# HUBzero aliases
+alias hzc='sudo docker exec -it hubzerodocker_cms_1 cat /etc/hubzero.secrets'
+
 # system aliases
 alias dev='cd ~/development'
 alias l='ls -CF'
