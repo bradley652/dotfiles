@@ -60,6 +60,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # HUBzero aliases
+alias dce='sudo docker-compose exec cms'
 alias hzc='sudo docker exec -it hubzerodocker_cms_1 cat /etc/hubzero.secrets'
 
 # system aliases
