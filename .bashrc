@@ -60,8 +60,10 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # HUBzero aliases
+alias bossk='ssh su-fuentesa@bossk.aws.hubzero.org'
 alias dce='sudo docker-compose exec cms'
 alias hzc='sudo docker exec -it hubzerodocker_cms_1 cat /etc/hubzero.secrets'
+alias hzuo='git pull upstream 2.1.0 && git push origin 2.1.0'
 
 # system aliases
 alias dev='cd ~/development'
