@@ -60,32 +60,19 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # HUBzero aliases
-alias bossk='ssh su-fuentesa@bossk.aws.hubzero.org'
-alias dce='sudo docker-compose exec cms'
-alias hzc='sudo docker exec -it hubzerodocker_cms_1 cat /etc/hubzero.secrets'
-alias hzuo='git pull upstream 2.1.0 && git push origin 2.1.0'
+alias bossk='ssh bossk'
 
 # system aliases
-alias dev='cd ~/development'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
 alias mv='mv -i'
 alias o='xdg-open'
 alias r='reset'
-alias rsp='ruby ~/development/code/scratchpads/ruby_scratchpad.rb'
 alias sag='sudo apt-get'
-alias jsp='node ~/development/code/scratchpads/js-scratchpad.js'
-
-# wc = word count; -l = lines only; * = all files; | pipe into sort; sort -n = sort numerically
-alias lines='wc -l * | sort -n'
 
 # git aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias gsom='git push origin master'
-alias glom='git pull origin master'
-alias gsod='git push origin dev'
-alias glod='git pull origin dev'
 
 # php aliases
 function phpserve() {
@@ -101,12 +88,7 @@ function rserve() {
 }
 
 # tmux aliases
-alias tmuxi='tmuxinator'
 alias tko='tmux kill-session -t'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -142,6 +124,12 @@ export EDITOR=vim
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# user-specific
+# Add ~/.bin to path
 export PATH="$PATH:$HOME/.bin"
+
+
+# load nvm and nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
