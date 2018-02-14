@@ -1,7 +1,7 @@
 set nocompatible
 
 "***********************
-"vundle
+"Vundle
 "***********************
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -36,7 +36,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details
 
 "***********************
-"faster split navigation
+"Faster split navigation
 "***********************
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -44,24 +44,12 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "***********************
-"be legit
+"HJKL navigation
 "***********************
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-
-"***********************
-"enable <C-s> saving
-"***********************
-command! -nargs=0 -bar Update if &modified
-                           \|    if empty(bufname('%'))
-                           \|        browse confirm write
-                           \|    else
-                           \|        confirm write
-                           \|    endif
-                           \|end
-nnoremap <silent> <C-s> :<C-u>Update<CR>
 
 "***********************
 "Leader mappings
@@ -99,7 +87,7 @@ set encoding=utf-8
 set foldmethod=manual
 set hidden
 set history=500
-set hlsearch          " highlight matches
+set hlsearch
 set incsearch
 set lazyredraw
 set list listchars=tab:\–\—,trail:·
@@ -108,7 +96,7 @@ set noswapfile
 set number
 set numberwidth=5
 set relativenumber
-set ruler             " show the cursor position all the time
+set ruler
 set shell=/bin/bash
 set shiftwidth=2
 set showmode
@@ -149,7 +137,7 @@ set t_Co=256
 set laststatus=2        " Always display the status line
 
 "***********************
-"highlight cursor row
+"Highlight cursor row
 "***********************
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline
@@ -157,7 +145,7 @@ set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
 "***********************
-"set internal variables
+"Set internal variables
 "***********************
 let g:neocomplete#enable_at_startup = 1
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
@@ -181,3 +169,20 @@ au BufWritePre * :call <SID>RemoveTrailingWhitespaces()
 "Ensure formatoptions are set for line wrapping purposes
 "***********************
 autocmd BufNewFile,BufRead * setlocal formatoptions+=croqlt
+
+"***********************
+"Virtual tabstops using spaces
+"Toggle expandtab with F11
+"***********************
+ function! TabToggle()
+	if &expandtab
+		set shiftwidth=4
+		set softtabstop=4
+		set noexpandtab
+	else
+		set shiftwidth=2
+		set softtabstop=2
+		set expandtab
+	endif
+endfunction
+nmap <F11> mz:execute TabToggle()<CR>'z
