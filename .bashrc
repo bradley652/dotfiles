@@ -1,7 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -22,10 +18,6 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -59,62 +51,27 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# HUBzero aliases
-alias bossk='ssh bossk'
-
-# system aliases
-alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -alF'
-alias mv='mv -i'
-alias o='xdg-open'
-alias r='reset'
-alias sag='sudo apt-get'
-
-# git aliases
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
-# php aliases
-function phpserve() {
-  php -S "localhost:$1"
-}
-
-# python aliases
-alias pyserve='python -m SimpleHTTPServer'
-
-#ruby aliases
-function rserve() {
-  ruby -run -e httpd . -p "$1"
-}
-
-# tmux aliases
-alias tko='tmux kill-session -t'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
+# Source bash aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+#
+# Source bash functions
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
 fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
 fi
 
 #displays git branch at terminal
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-
 PS1="$USER\$(parse_git_branch) /$NO_COLOR\W$GREEN\$NO_COLOR \$ "
 
 # set editor
@@ -124,12 +81,10 @@ export EDITOR=vim
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# Add ~/.bin to path
+# Export ./bin to PATH
 export PATH="$PATH:$HOME/.bin"
 
-
-# load nvm and nvm bash_completion
+# Load nvm and nvm bash_completion
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
