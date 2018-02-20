@@ -16,3 +16,6 @@ alias pyserve='python -m SimpleHTTPServer'
 alias tmuxi='tmuxinator'
 alias tko='tmux kill-session -t'
 
+# bossk aliases
+alias app='cd /var/www/bossk/app'
+alias core='cd /var/www/bossk/core'

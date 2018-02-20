@@ -77,10 +77,6 @@ PS1="$USER\$(parse_git_branch) /$NO_COLOR\W$GREEN\$NO_COLOR \$ "
 # set editor
 export EDITOR=vim
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # Export ./bin to PATH
 export PATH="$PATH:$HOME/.bin"
 
