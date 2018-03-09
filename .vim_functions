@@ -17,8 +17,8 @@ au BufWritePre * :call <SID>RemoveTrailingWhitespaces()
 "***********************
 function! TabToggle()
   if &expandtab
-    set shiftwidth=4
-    set softtabstop=4
+    set shiftwidth=2
+    set softtabstop=2
     set noexpandtab
   else
     set shiftwidth=2
