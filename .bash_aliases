@@ -3,6 +3,7 @@ alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
 alias mv='mv -i'
+alias mysudo='sudo -E env "PATH=$PATH"'
 alias o='xdg-open'
 alias r='reset'
 
