@@ -55,7 +55,7 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-#
+
 # Source bash functions
 if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
