@@ -32,12 +32,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details
 
-" ***********************
-"NERDTree mappings
-" ***********************
-map <F9> :NERDTreeFind<CR>
-map <F10> :NERDTreeToggle<CR>
-
 "***********************
 "Airline settings
 "***********************
