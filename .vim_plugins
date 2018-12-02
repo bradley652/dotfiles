@@ -14,9 +14,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
-Plugin 'shougo/neocomplete'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'stanangeloff/php.vim'
 Plugin 'tpope/vim-endwise'
@@ -34,12 +32,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details
 
-" ***********************
-"NERDTree mappings
-" ***********************
-map <F9> :NERDTreeFind<CR>
-map <F10> :NERDTreeToggle<CR>
-
 "***********************
 "Airline settings
 "***********************
@@ -51,9 +43,4 @@ let g:airline_symbols.space = "\ua0"
 let g:airline_theme='solarized'
 set t_Co=256
 set laststatus=2
-
-"***********************
-"Enable neocomplete
-"***********************
-let g:neocomplete#enable_at_startup = 1
 
